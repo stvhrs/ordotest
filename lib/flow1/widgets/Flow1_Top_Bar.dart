@@ -51,7 +51,7 @@ class TopBar extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Colors.grey.shade300,
+              color: Colors.grey.shade200,
               borderRadius: BorderRadius.circular(25),
             ),
             width: deviceWidth*0.55,

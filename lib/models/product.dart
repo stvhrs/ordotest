@@ -7,16 +7,16 @@ class Product {
   final double price;
   final double actualPrice;
   final String imageUrl;
-  final bool used;
+  
   final Color color;
-  Product(this.name, this.price, this.actualPrice, this.imageUrl, this.used,this.color);
+  Product(this.name, this.price, this.actualPrice, this.imageUrl,this.color);
   factory Product.fromMap(Map<String, dynamic> json) {
     return Product(
       json['name'],
       json['price'],
       json['actualPrice'],
       json['imageUrl'].toString(),
-      json['used'], json['color']
+       json['color']
     );
   }
 }
