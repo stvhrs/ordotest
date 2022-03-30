@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ordotest/packages/indicator_boarding/lib/src/painters/indicator_painter.dart';
-import 'package:ordotest/packages/indicator_boarding/lib/src/painters/customizable_painter.dart';
 import 'package:ordotest/packages/indicator_boarding/lib/src/painters/scale_painter.dart';
 
 import 'indicator_effect.dart';

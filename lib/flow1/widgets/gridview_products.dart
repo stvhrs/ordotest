@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ordotest/Dummy.dart';
-import 'package:ordotest/flow1/widgets/Product_Tile.dart';
+import 'package:ordotest/flow1/widgets/product_tile.dart';
 import 'package:ordotest/models/product.dart';
 
 class GridViewProducts extends StatefulWidget {
@@ -23,9 +23,9 @@ class _GridViewProductsState extends State<GridViewProducts> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(addRepaintBoundaries: true,shrinkWrap: true,physics: NeverScrollableScrollPhysics(),
+    return GridView.count(addRepaintBoundaries: true,shrinkWrap: true,physics: const NeverScrollableScrollPhysics(),
        childAspectRatio:382.11 / 600,
-        padding: const EdgeInsets.all(20),
+       padding: const EdgeInsets.all(20),
         crossAxisSpacing: 40,
  mainAxisSpacing: 20,
         crossAxisCount: 2,semanticChildCount: 8,

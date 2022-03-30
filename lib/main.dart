@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'flow1/Flow1_Screen.dart';
+import 'flow1/flow1_screen.dart';
 
 const page = PageTransitionsTheme(builders: {
   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Test Ordo',
       theme: ThemeData(
-          primaryColor: Color.fromRGBO(60, 125, 217, 1),
+          primaryColor: const Color.fromRGBO(60, 125, 217, 1),
           colorScheme: ColorScheme.fromSwatch(
             accentColor: const Color.fromRGBO(71, 98, 63, 1),
           ),
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           ),
           pageTransitionsTheme: page,
           fontFamily: 'Poppins',
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
           textTheme: const TextTheme(
               headline1: TextStyle(
                 decoration: TextDecoration.lineThrough,

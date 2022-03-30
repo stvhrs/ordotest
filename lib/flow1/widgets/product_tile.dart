@@ -1,7 +1,5 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:ordotest/flow2/Flow2_Screen.dart';
+import 'package:ordotest/flow2/flow2_screen.dart';
 import 'package:ordotest/main.dart';
 
 class ProductTile extends StatelessWidget {
@@ -18,8 +16,8 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget rating() => Container(
-        width: deviceWidth / 5,
-        padding: EdgeInsets.only(left: 1),
+        constraints: BoxConstraints(maxWidth: deviceWidth / 5),
+        padding: const EdgeInsets.only(left: 1),
         decoration: const BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -43,7 +41,7 @@ class ProductTile extends StatelessWidget {
             ),
             Text(
               '5.0 | 200+ rating',
-              style: TextStyle(color: Colors.white, fontSize: 8),
+              style: TextStyle(color: Colors.white, fontSize: 7),
             ),
           ],
         ));
@@ -63,9 +61,12 @@ class ProductTile extends StatelessWidget {
                     color: color, borderRadius: BorderRadius.circular(10)),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    imageUrl,
-                    fit: BoxFit.contain,
+                  child: Hero(
+                    tag: imageUrl,
+                    child: Image.asset(
+                      imageUrl,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
@@ -74,7 +75,7 @@ class ProductTile extends StatelessWidget {
           ],
         ),
         Container(
-          margin: EdgeInsets.only(top: 5),
+          margin: const EdgeInsets.only(top: 5),
           child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,10 +93,10 @@ class ProductTile extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  padding:
-                      EdgeInsets.only(left: 7, right: 7, top: 4, bottom: 4),
+                  padding: const EdgeInsets.only(
+                      left: 7, right: 7, top: 4, bottom: 4),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(60, 125, 217, 1),
+                      color: const Color.fromRGBO(60, 125, 217, 1),
                       borderRadius: BorderRadius.circular(100)),
                   child: const Text(
                     'Diskon 10%',

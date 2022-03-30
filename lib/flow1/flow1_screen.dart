@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ordotest/flow1/widgets/Banner_Aqua.dart';
-import 'package:ordotest/flow1/widgets/GridView_Products.dart';
-import 'package:ordotest/flow1/widgets/Flow1_Top_Bar.dart';
+import 'package:ordotest/flow1/widgets/banner.dart';
+import 'package:ordotest/flow1/widgets/gridview_products.dart';
+import 'package:ordotest/flow1/widgets/flow1_top_bar.dart';
 import 'package:ordotest/main.dart';
 
 class Flow1Screen extends StatefulWidget {
@@ -12,27 +12,27 @@ class Flow1Screen extends StatefulWidget {
 }
 
 class _Flow1ScreenState extends State<Flow1Screen> {
-  
-
   @override
-  Widget build(BuildContext context) { deviceHeight = MediaQuery.of(context).size.height;
+  Widget build(BuildContext context) {
+    deviceHeight = MediaQuery.of(context).size.height;
     deviceWidth = MediaQuery.of(context).size.width;
     return SafeArea(
         child: Scaffold(
-      appBar:  PreferredSize(
-          preferredSize: Size.fromHeight(deviceHeight/10), child: TopBar()),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(deviceHeight / 10),
+          child: const TopBar()),
       body: ListView(children: const [BannerAqua(), GridViewProducts()]),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          Icon(
+          const Icon(
             Icons.document_scanner,
             color: Colors.grey,
           ),
-          Icon(Icons.compare_arrows_rounded, color: Colors.grey),
+          const Icon(Icons.compare_arrows_rounded, color: Colors.grey),
           Icon(Icons.home, color: Theme.of(context).colorScheme.secondary),
-          Icon(Icons.graphic_eq_sharp, color: Colors.grey),
-          Icon(Icons.person, color: Colors.grey)
+          const Icon(Icons.graphic_eq_sharp, color: Colors.grey),
+          const Icon(Icons.person, color: Colors.grey)
         ]),
       ),
     ));
