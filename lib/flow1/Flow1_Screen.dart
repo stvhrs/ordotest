@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+import 'package:ordotest/flow1/widgets/Banner_Aqua.dart';
+import 'package:ordotest/flow1/widgets/GridView_Products.dart';
+import 'package:ordotest/flow1/widgets/Top_Bar.dart';
+import 'package:ordotest/main.dart';
+
+class Flow1Screen extends StatefulWidget {
+  const Flow1Screen({Key? key}) : super(key: key);
+
+  @override
+  _Flow1ScreenState createState() => _Flow1ScreenState();
+}
+
+class _Flow1ScreenState extends State<Flow1Screen> {
+  
+
+  @override
+  Widget build(BuildContext context) { deviceHeight = MediaQuery.of(context).size.height;
+    deviceWidth = MediaQuery.of(context).size.width;
+    return SafeArea(
+        child: Scaffold(
+      appBar:  PreferredSize(
+          preferredSize: Size.fromHeight(deviceHeight/10), child: TopBar()),
+      body: ListView(children: const [BannerAqua(), GridViewProducts()]),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(20),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          Icon(
+            Icons.document_scanner,
+            color: Colors.grey,
+          ),
+          Icon(Icons.compare_arrows_rounded, color: Colors.grey),
+          Icon(Icons.home, color: Theme.of(context).colorScheme.secondary),
+          Icon(Icons.graphic_eq_sharp, color: Colors.grey),
+          Icon(Icons.person, color: Colors.grey)
+        ]),
+      ),
+    ));
+  }
+}
