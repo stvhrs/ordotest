@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import '../../main.dart';
 import 'package:ordotest/packages/indicator_boarding/lib/smooth_page_indicator.dart';
 
-class TopBar2 extends StatefulWidget {
+class AppBarFLow2 extends StatefulWidget {
   final String imageUrl;
-  const TopBar2(this.imageUrl, {Key? key}) : super(key: key);
+  const AppBarFLow2(this.imageUrl, {Key? key}) : super(key: key);
 
   @override
-  State<TopBar2> createState() => _TopBar2State();
+  State<AppBarFLow2> createState() => _AppBarFLow2State();
 }
 
-class _TopBar2State extends State<TopBar2> with SingleTickerProviderStateMixin {
+class _AppBarFLow2State extends State<AppBarFLow2>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
   int _selectedIndex = 0;
   double top = 0;
@@ -56,8 +57,11 @@ class _TopBar2State extends State<TopBar2> with SingleTickerProviderStateMixin {
         flexibleSpace: display);
   }
 
-  Widget get icon1 =>
-      const Icon(Icons.shopping_bag, size: 24, color:  Color.fromRGBO(100, 161, 244, 1),);
+  Widget get icon1 => const Icon(
+        Icons.shopping_bag,
+        size: 24,
+        color: Color.fromRGBO(100, 161, 244, 1),
+      );
 
   Widget get icon2 => const Icon(
         Icons.notifications,

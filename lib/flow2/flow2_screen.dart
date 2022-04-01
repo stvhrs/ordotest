@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ordotest/flow2/widgets/flow2_top_bar.dart';
+import 'package:ordotest/flow2/widgets/flow2_app_bar.dart';
 
 class Flow2Screen extends StatefulWidget {
   final String imageUrl;
@@ -17,7 +17,7 @@ class _Flow2ScreenState extends State<Flow2Screen> {
         body: NestedScrollView(
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
-              return [TopBar2(widget.imageUrl)];
+              return [AppBarFLow2(widget.imageUrl)];
             },
             body: Container(
               margin: const EdgeInsets.only(top: 14),

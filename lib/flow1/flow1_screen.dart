@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ordotest/flow1/widgets/banner.dart';
 import 'package:ordotest/flow1/widgets/gridview_products.dart';
-import 'package:ordotest/flow1/widgets/flow1_top_bar.dart';
+import 'package:ordotest/flow1/widgets/flow1_app_bar.dart';
 import 'package:ordotest/main.dart';
 
 class Flow1Screen extends StatefulWidget {
@@ -20,7 +20,7 @@ class _Flow1ScreenState extends State<Flow1Screen> {
         child: Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(deviceHeight / 10),
-          child: const TopBar()),
+          child: const AppBarFLow1()),
       body: ListView(children: const [BannerAqua(), GridViewProducts()]),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(20),
