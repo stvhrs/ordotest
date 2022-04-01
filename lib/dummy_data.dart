@@ -40,7 +40,7 @@ class Constants {
       'actualPrice': 4354.0,
       'imageUrl': 'assets/bag2.png',
       
-      'color': Color.fromARGB(68, 131, 216, 91)
+      'color':  Color.fromRGBO(223, 174, 29, 1),
     },
     {
       'name': 'Tas',

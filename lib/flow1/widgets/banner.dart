@@ -1,28 +1,4 @@
-import 'package:flutter/material.dart'
-    show
-        Alignment,
-        AspectRatio,
-        BorderRadius,
-        BoxDecoration,
-        BoxFit,
-        BuildContext,
-        Clip,
-        ClipRRect,
-        Colors,
-        Container,
-        DefaultTabController,
-        EdgeInsets,
-        Image,
-        Key,
-        PageController,
-        PageView,
-        Positioned,
-        SingleTickerProviderStateMixin,
-        Stack,
-        State,
-        StatefulWidget,
-        TabController,
-        Widget;
+import 'package:flutter/material.dart';
 import 'package:ordotest/main.dart';
 import 'package:ordotest/packages/indicator_boarding/lib/smooth_page_indicator.dart';
 
@@ -35,15 +11,19 @@ class BannerAqua extends StatefulWidget {
 
 class _BannerAquaState extends State<BannerAqua>
     with SingleTickerProviderStateMixin {
+      
   late TabController _tabController;
+  late PageController _pageController;
   int _selectedIndex = 0;
 
   @override
   void initState() {
     _tabController = TabController(length: 3, vsync: this);
+     _pageController=  PageController(initialPage: _selectedIndex);
     _tabController.addListener(() {
       setState(() {
         _selectedIndex = _tabController.index;
+       
       });
     });
     super.initState();
@@ -51,8 +31,6 @@ class _BannerAquaState extends State<BannerAqua>
 
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController(initialPage: _selectedIndex);
-
     return Container(
       margin: const EdgeInsets.only(bottom: 25),
       height: deviceHeight / 4,
@@ -64,7 +42,7 @@ class _BannerAquaState extends State<BannerAqua>
           alignment: Alignment.bottomCenter,
           children: [
             PageView(
-                controller: controller,
+                controller: _pageController,
                 children: List.generate(
                   3,
                   (index) => AspectRatio(
@@ -72,7 +50,7 @@ class _BannerAquaState extends State<BannerAqua>
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(22),
                         child: Image.asset(
                           'assets/banner.png',
                           fit: BoxFit.fitWidth,
@@ -84,7 +62,7 @@ class _BannerAquaState extends State<BannerAqua>
             Positioned(
               bottom: -10,
               child: SmoothPageIndicator(
-                controller: controller,
+                controller: _pageController,
                 count: 3,
                 effect: ExpandingDotsEffect(
                   dotHeight: 8,

@@ -48,10 +48,10 @@ class MyApp extends StatelessWidget {
               headline1: TextStyle(
                 decoration: TextDecoration.lineThrough,
                 color: Color.fromRGBO(60, 125, 217, 1),
-                fontSize: 14,
+                fontSize: 12,
               ),
               headline2: TextStyle(
-                  fontSize: 14,
+                  fontSize: 12,
                   color: Color.fromRGBO(60, 125, 217, 1),
                   fontWeight: FontWeight.bold),
               headline3: TextStyle(

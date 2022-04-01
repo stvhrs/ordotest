@@ -22,8 +22,8 @@ class ProductTile extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
-                offset: Offset(0.0, 1.0),
-                blurRadius: 2.0,
+                offset: Offset(0.0, 0.5),
+                blurRadius: 1.0,
               ),
             ],
             color: Color.fromRGBO(223, 174, 29, 1),
@@ -45,6 +45,20 @@ class ProductTile extends StatelessWidget {
             ),
           ],
         ));
+    Widget diskon() => Container(
+          padding:  const EdgeInsets.only(left: 7, right: 4, top: 3, bottom: 3),
+          decoration: BoxDecoration(
+              color: const Color.fromRGBO(60, 125, 217, 1),
+              borderRadius: BorderRadius.circular(100)),
+          child: const Text(
+            'Diskon 10%',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 9),
+          ),
+        );
     return InkWell(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
@@ -75,7 +89,7 @@ class ProductTile extends StatelessWidget {
           ],
         ),
         Container(
-          margin: const EdgeInsets.only(top: 5),
+          margin: const EdgeInsets.only(top: 12),
           child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,24 +103,10 @@ class ProductTile extends StatelessWidget {
                     Text(
                       'Rp ' '$price',
                       style: Theme.of(context).textTheme.headline2,
-                    )
+                    ),
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                      left: 7, right: 7, top: 4, bottom: 4),
-                  decoration: BoxDecoration(
-                      color: const Color.fromRGBO(60, 125, 217, 1),
-                      borderRadius: BorderRadius.circular(100)),
-                  child: const Text(
-                    'Diskon 10%',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 10),
-                  ),
-                )
+                diskon(),
               ]),
         ),
         Padding(
