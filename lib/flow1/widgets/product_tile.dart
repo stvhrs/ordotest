@@ -15,50 +15,6 @@ class ProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget rating() => Container(
-        constraints: BoxConstraints(maxWidth: deviceWidth / 5),
-        padding: const EdgeInsets.only(left: 1),
-        decoration: const BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(0.0, 0.5),
-                blurRadius: 1.0,
-              ),
-            ],
-            color: Color.fromRGBO(223, 174, 29, 1),
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(10))),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Icon(
-              Icons.star_rate_rounded,
-              size: 14,
-            ),
-            Text(
-              '5.0 | 200+ rating',
-              style: TextStyle(color: Colors.white, fontSize: 7),
-            ),
-          ],
-        ));
-    Widget diskon() => Container(
-          padding:  const EdgeInsets.only(left: 7, right: 4, top: 3, bottom: 3),
-          decoration: BoxDecoration(
-              color: const Color.fromRGBO(60, 125, 217, 1),
-              borderRadius: BorderRadius.circular(100)),
-          child: const Text(
-            'Diskon 10%',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 9),
-          ),
-        );
     return InkWell(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
@@ -85,7 +41,7 @@ class ProductTile extends StatelessWidget {
                 ),
               ),
             ),
-            rating(),
+            rating,
           ],
         ),
         Container(
@@ -106,7 +62,7 @@ class ProductTile extends StatelessWidget {
                     ),
                   ],
                 ),
-                diskon(),
+                diskon,
               ]),
         ),
         Padding(
@@ -122,4 +78,48 @@ class ProductTile extends StatelessWidget {
       ]),
     );
   }
+
+  Widget get rating => Container(
+      constraints: BoxConstraints(maxWidth: deviceWidth / 5),
+      padding: const EdgeInsets.only(left: 1),
+      decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0.0, 0.5),
+              blurRadius: 1.0,
+            ),
+          ],
+          color: Color.fromRGBO(223, 174, 29, 1),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(10),
+              bottomLeft: Radius.circular(0),
+              bottomRight: Radius.circular(10))),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
+          Icon(
+            Icons.star_rate_rounded,
+            size: 14,
+          ),
+          Text(
+            '5.0 | 200+ rating',
+            style: TextStyle(color: Colors.white, fontSize: 7),
+          ),
+        ],
+      ));
+
+  Widget get diskon => Container(
+        padding: const EdgeInsets.only(left: 7, right: 4, top: 3, bottom: 3),
+        decoration: BoxDecoration(
+            color: const Color.fromRGBO(60, 125, 217, 1),
+            borderRadius: BorderRadius.circular(100)),
+        child: const Text(
+          'Diskon 10%',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 9),
+        ),
+      );
 }

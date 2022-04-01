@@ -16,7 +16,7 @@ class Product {
       json['name'],
       json['price'],
       json['actualPrice'],
-      json['imageUrl'].toString(),
+      json['imageUrl'],
        json['color']
     );
   }

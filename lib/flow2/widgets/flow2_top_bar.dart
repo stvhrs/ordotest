@@ -53,7 +53,7 @@ class _TopBar2State extends State<TopBar2> with SingleTickerProviderStateMixin {
           ],
         ),
         actions: [icon1, icon2],
-        flexibleSpace: display());
+        flexibleSpace: display);
   }
 
   Widget get icon1 =>
@@ -65,7 +65,7 @@ class _TopBar2State extends State<TopBar2> with SingleTickerProviderStateMixin {
         color: Color.fromRGBO(255, 72, 90, 1),
       );
 
-  Widget display() {
+  Widget get display {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       top = constraints.biggest.height;

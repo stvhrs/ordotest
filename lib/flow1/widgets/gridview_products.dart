@@ -23,12 +23,16 @@ class _GridViewProductsState extends State<GridViewProducts> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(addRepaintBoundaries: true,shrinkWrap: true,physics: const NeverScrollableScrollPhysics(),
-       childAspectRatio:382.11 / 600,
-       padding: const EdgeInsets.all(20),
+    return GridView.count(
+        addRepaintBoundaries: true,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        childAspectRatio: 382.11 / 600,
+        padding: const EdgeInsets.all(20),
         crossAxisSpacing: 40,
- mainAxisSpacing: 20,
-        crossAxisCount: 2,semanticChildCount: 8,
+        mainAxisSpacing: 20,
+        crossAxisCount: 2,
+        semanticChildCount: 8,
         children: myProducts
             .map((prod) => ProductTile(prod.name, prod.price, prod.actualPrice,
                 prod.imageUrl, prod.color))
