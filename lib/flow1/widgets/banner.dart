@@ -11,7 +11,6 @@ class BannerAqua extends StatefulWidget {
 
 class _BannerAquaState extends State<BannerAqua>
     with SingleTickerProviderStateMixin {
-      
   late TabController _tabController;
   late PageController _pageController;
   int _selectedIndex = 0;
@@ -19,11 +18,10 @@ class _BannerAquaState extends State<BannerAqua>
   @override
   void initState() {
     _tabController = TabController(length: 3, vsync: this);
-     _pageController=  PageController(initialPage: _selectedIndex);
+    _pageController = PageController(initialPage: _selectedIndex);
     _tabController.addListener(() {
       setState(() {
         _selectedIndex = _tabController.index;
-       
       });
     });
     super.initState();
@@ -32,8 +30,10 @@ class _BannerAquaState extends State<BannerAqua>
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 25),
-      height: deviceHeight / 4,
+      margin: const EdgeInsets.only(
+        bottom: 20,
+      ),
+      height: deviceHeight / 4.66,
       child: DefaultTabController(
         length: 3,
         initialIndex: 0,
@@ -42,32 +42,31 @@ class _BannerAquaState extends State<BannerAqua>
           alignment: Alignment.bottomCenter,
           children: [
             PageView(
-                controller: _pageController,
-                children: List.generate(
-                  3,
-                  (index) => AspectRatio(
-                    aspectRatio: 821.07 / 404.85,
-                    child: Container(
-                      margin: const EdgeInsets.all(10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(22),
-                        child: Image.asset(
-                          'assets/banner.png',
-                          fit: BoxFit.fitWidth,
-                        ),
+              controller: _pageController,
+              children: List.generate(
+                3,
+                (index) => Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(index.isEven
+                            ? 'assets/banner.png'
+                            : 'assets/banner2.png'),
+                        fit: BoxFit.fitWidth,
                       ),
-                    ),
-                  ),
-                )),
+                      borderRadius: BorderRadius.circular(15)),
+                  margin: const EdgeInsets.only(left: 15, right: 15),
+                ),
+              ),
+            ),
             Positioned(
-              bottom: -10,
+              bottom: -15,
               child: SmoothPageIndicator(
                 controller: _pageController,
                 count: 3,
                 effect: ExpandingDotsEffect(
-                  dotHeight: 8,
+                  dotHeight: 6,
                   dotColor: Colors.blue.shade700,
-                  dotWidth: 20,
+                  dotWidth: 15,
                   activeDotColor: Colors.blue.shade200,
                 ),
               ),

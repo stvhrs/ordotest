@@ -32,12 +32,13 @@ class _AppBarFLow2State extends State<AppBarFLow2>
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromRGBO(252, 248, 248, 1),
         automaticallyImplyLeading: false,
         expandedHeight: deviceHeight / 2.5,
         floating: true,
+       
         pinned: true,
-        title: Row(
+        actions: [ Row(
           children: [
             IconButton(
                 onPressed: () {
@@ -47,13 +48,12 @@ class _AppBarFLow2State extends State<AppBarFLow2>
                   Icons.arrow_circle_left,
                   color: Color.fromRGBO(100, 161, 244, 1),
                 )),
-            Text(
+            const Text(
               'PRODUCT DETAIL',
-              style: Theme.of(context).textTheme.headline2,
+              style: TextStyle( color: Color.fromRGBO(100, 161, 244, 1),fontSize: 14,fontWeight: FontWeight.bold),
             ),
           ],
-        ),
-        actions: [icon1, icon2],
+        ),const Spacer(),icon1, icon2 ],
         flexibleSpace: display);
   }
 
@@ -63,11 +63,14 @@ class _AppBarFLow2State extends State<AppBarFLow2>
         color: Color.fromRGBO(100, 161, 244, 1),
       );
 
-  Widget get icon2 => const Icon(
-        Icons.notifications,
-        size: 24,
-        color: Color.fromRGBO(255, 72, 90, 1),
-      );
+  Widget get icon2 => const Padding(
+    padding: EdgeInsets.only(right: 18,left: 8.0),
+    child: Icon(
+          Icons.notifications,
+          size: 24,
+          color: Color.fromRGBO(255, 72, 90, 1),
+        ),
+  );
 
   Widget get display {
     return LayoutBuilder(

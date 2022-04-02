@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 class Product {
   
   final String name;
-  final double price;
-  final double actualPrice;
+  final String price;
+  final String actualPrice;
   final String imageUrl;
   final Color color;
 

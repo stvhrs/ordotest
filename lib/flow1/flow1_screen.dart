@@ -19,7 +19,7 @@ class _Flow1ScreenState extends State<Flow1Screen> {
     return SafeArea(
         child: Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(deviceHeight / 10),
+          preferredSize: Size.fromHeight(deviceHeight / 14),
           child: const AppBarFLow1()),
       body: ListView(children: const [BannerAqua(), GridViewProducts()]),
       bottomNavigationBar: Container(
