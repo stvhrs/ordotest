@@ -259,10 +259,10 @@ Widget comment(int i) => Container(
                   style: const TextStyle(
                       fontSize: 13, fontWeight: FontWeight.bold),
                 ),
-                const Text(
+              const Text(
                   '14 min',
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: 11,color: Colors.grey
                   ),
                 ),
               ],
