@@ -111,11 +111,10 @@ class ProductTile extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
-           Icon(
-              Icons.star_rate_rounded,
-              size: 11,
-            ),
-          
+          Icon(
+            Icons.star_rate_rounded,
+            size: 11,
+          ),
           Text(
             '5.0 | 200+ rating',
             style: TextStyle(color: Colors.white, fontSize: 6.5),

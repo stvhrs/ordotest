@@ -58,7 +58,7 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
+                              Column(crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Text(
                                     'Rp 126.000',
@@ -68,7 +68,7 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                                         color: Colors.blueAccent),
                                   ),
                                   Text(
-                                    'Rp 126.000',
+                                    'Rp 100.500',
                                     style: TextStyle(
                                         color: Theme.of(context).primaryColor,
                                         fontWeight: FontWeight.bold),
@@ -79,18 +79,21 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                             ],
                           ),
                           const Divider(),
-                          Text(
-                            'Vendor',
-                            style: TextStyle(
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontSize: 11.5,
-                                fontWeight: FontWeight.bold),
+                          Container(margin: EdgeInsets.only(top: 6,),
+                            child: Text(
+                              'Vendor',
+                              style: TextStyle(
+                                  color: Theme.of(context).colorScheme.secondary,
+                                  fontSize: 11.5,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                margin: const EdgeInsets.only(right: 10, top: 10),
+                                margin:
+                                    const EdgeInsets.only(right: 10, top: 10),
                                 width: 30,
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
@@ -133,7 +136,8 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                                 fontSize: 11.5,
                                 fontWeight: FontWeight.w600),
                           ),
-                          ...List.generate(2, (index) => comment(index)).toList()
+                          ...List.generate(2, (index) => comment(index))
+                              .toList()
                         ],
                       ))
                 ],
@@ -198,18 +202,18 @@ Widget get bottomNav => Container(
           ]),
     );
 Widget get rating => Container(
-    padding: const EdgeInsets.only(left: 5, top: 2, bottom: 2),
+    padding: const EdgeInsets.only(left: 5, top: 2, bottom: 5),
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: const [
+      children:  [
         Icon(
           Icons.star_rate_rounded,
-          size: 16,
-          color: Colors.blue,
+          size: 25,
+          color: Color.fromRGBO(60, 125, 217, 1),
         ),
         Text(
           '5.0 | 200 Terjual',
-          style: TextStyle(color: Colors.blue, fontSize: 12),
+          style: TextStyle(height: 2,color:Color.fromRGBO(60, 125, 217, 1), fontSize: 14),
         ),
       ],
     ));
@@ -218,27 +222,31 @@ Widget comment(int i) => Container(
       child: Column(
         children: [
           ListTile(
-            trailing: SizedBox(width:deviceWidth/11,
-            child: Row(
-       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:  [
-                     Expanded(
-                    child:Icon(
-            Icons.star_rate_rounded,
-            size: 14,
-            color: Colors.amber.shade900,
-                  ),),
-                const Text(
-                              '5.0',
-                              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 12),
-                    
+            trailing: SizedBox(
+              width: deviceWidth / 11,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Icon(
+                      Icons.star_rate_rounded,
+                      size: 14,
+                      color: Colors.amber.shade900,
+                    ),
+                  ),
+                  const Text(
+                    '5.0',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12),
                   ),
                 ],
               ),
-          ) ,
+            ),
             style: ListTileStyle.drawer,
             leading: Image.asset(
-             i.isEven? 'assets/p1.png':'assets/p2.png',
+              i.isEven ? 'assets/p1.png' : 'assets/p2.png',
               width: 35,
               alignment: Alignment.bottomCenter,
             ),
@@ -247,8 +255,9 @@ Widget comment(int i) => Container(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  i.isEven?  'Maude Hall':'Ester Howard',
-                  style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                  i.isEven ? 'Maude Hall' : 'Ester Howard',
+                  style: const TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.bold),
                 ),
                 const Text(
                   '14 min',
@@ -261,7 +270,8 @@ Widget comment(int i) => Container(
           ),
           const Text(
             'Thats a fantastic new app feature. You and your team did an excellent job of incorporating user testing feedback.',
-          textAlign: TextAlign.justify, style: TextStyle(fontSize: 10),
+            textAlign: TextAlign.justify,
+            style: TextStyle(fontSize: 10),
           )
         ],
       ),
