@@ -40,7 +40,7 @@ class ProductTile extends StatelessWidget {
                 aspectRatio: 334.34 / 295.68,
                 child: Container(
                   decoration: BoxDecoration(
-                      color: color, borderRadius: BorderRadius.circular(15)),
+                      color: color, borderRadius: BorderRadius.circular(10)),
                   child: Hero(
                     tag: imageUrl,
                     child: Image.asset(

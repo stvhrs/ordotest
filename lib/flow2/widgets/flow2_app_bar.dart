@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ordotest/flow3/flow3_screen.dart';
 import '../../main.dart';
 import 'package:ordotest/packages/indicator_boarding/lib/smooth_page_indicator.dart';
 
@@ -52,7 +53,7 @@ class _AppBarFLow2State extends State<AppBarFLow2>
                 'PRODUCT DETAIL',
                 style: TextStyle(
                     color: Color.fromRGBO(100, 161, 244, 1),
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -64,10 +65,15 @@ class _AppBarFLow2State extends State<AppBarFLow2>
         flexibleSpace: display);
   }
 
-  Widget get icon1 => const Icon(
-        Icons.shopping_bag,
-        size: 24,
-        color: Color.fromRGBO(100, 161, 244, 1),
+  Widget get icon1 => IconButton(
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FLow3Screen(),) );
+        },
+        icon: const Icon(
+          Icons.shopping_bag,
+          size: 24,
+          color: Color.fromRGBO(100, 161, 244, 1),
+        ),
       );
 
   Widget get icon2 => const Padding(

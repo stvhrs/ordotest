@@ -29,14 +29,21 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                   BoxShadow(
                       color: Color.fromRGBO(255, 72, 90, 1),
                       spreadRadius: 20,
-                      offset: Offset(20, 6)),
+                      offset: Offset(20, -5)),
+                  BoxShadow(
+                      color: Colors.white,
+                      spreadRadius: 20,
+                      offset: Offset(20, 10))
                 ],
               ),
               child: ListView(
                 children: [
                   Container(
-                      margin:
-                          const EdgeInsets.only(top: 25, left: 25, right: 25),
+                      margin: const EdgeInsets.only(
+                        top: 10,
+                        left: 25,
+                        right: 25,
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -48,53 +55,59 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                                 style: TextStyle(
                                     color:
                                         Theme.of(context).colorScheme.secondary,
-                                    fontWeight: FontWeight.bold),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15),
                               ),
                               const Spacer(),
                               bekas,
                               stock
                             ],
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    'Rp 126.000',
-                                    style: TextStyle(
-                                        decoration: TextDecoration.lineThrough,
-                                        fontSize: 16,
-                                        color: Colors.blueAccent),
-                                  ),
-                                  Text(
-                                    'Rp 100.500',
-                                    style: TextStyle(
-                                        color: Theme.of(context).primaryColor,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                              diskon
-                            ],
-                          ),
-                          const Divider(),
-                          Container(margin: EdgeInsets.only(top: 6,),
-                            child: Text(
-                              'Vendor',
-                              style: TextStyle(
-                                  color: Theme.of(context).colorScheme.secondary,
-                                  fontSize: 11.5,
-                                  fontWeight: FontWeight.bold),
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Rp 126.000',
+                                      style: TextStyle(
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                          fontSize: 17,
+                                          color:
+                                              Color.fromRGBO(100, 161, 244, 1),
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Text(
+                                      'Rp 100.500',
+                                      style: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15.5),
+                                    )
+                                  ],
+                                ),
+                                diskon
+                              ],
                             ),
+                          ),
+                          const Divider(
+                            height: 0,
+                          ),
+                          Text(
+                            'Vendor',
+                            style: Theme.of(context).textTheme.headline4,
                           ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 margin:
-                                    const EdgeInsets.only(right: 10, top: 10),
-                                width: 30,
+                                    const EdgeInsets.only(right: 15, top: 8),
+                                width: 35,
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
                                     child: Image.asset('assets/store.png')),
@@ -104,20 +117,16 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                                   child: const Text(
                                     'Eiger Store',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 13),
                                   )),
                               const Spacer(),
-                              rating
+                              terjual
                             ],
                           ),
                           Text(
                             'Deskripsi',
-                            style: TextStyle(
-                                height: 4,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontSize: 11.5,
-                                fontWeight: FontWeight.bold),
+                            style: Theme.of(context).textTheme.headline4,
                           ),
                           Text(
                             'Int publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
@@ -130,11 +139,7 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                           ),
                           Text(
                             'Ulasan dan Penilaian',
-                            style: TextStyle(
-                                height: 4,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontSize: 11.5,
-                                fontWeight: FontWeight.w600),
+                            style: Theme.of(context).textTheme.headline4,
                           ),
                           ...List.generate(2, (index) => comment(index))
                               .toList()
@@ -151,7 +156,7 @@ class _Flow2ScreenState extends State<Flow2Screen> {
 
 Widget get diskon => Container(
       margin: const EdgeInsets.only(top: 2),
-      padding: const EdgeInsets.only(left: 7, right: 7, bottom: 1.2, top: 1.2),
+      padding: const EdgeInsets.only(left: 5, right: 5, bottom: 1, top: 1),
       decoration: BoxDecoration(
           color: const Color.fromRGBO(60, 125, 217, 1),
           borderRadius: BorderRadius.circular(100)),
@@ -159,32 +164,35 @@ Widget get diskon => Container(
         'Diskon 10%',
         textAlign: TextAlign.center,
         style: TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 9.5),
+            fontWeight: FontWeight.w600, color: Colors.white, fontSize: 14),
       ),
     );
+
 Widget get bekas => Container(
       padding: const EdgeInsets.only(left: 9, right: 9, bottom: 4, top: 4),
       margin: const EdgeInsets.only(right: 12, bottom: 3),
       decoration: BoxDecoration(
-          color: Colors.amber.shade600,
-          borderRadius: BorderRadius.circular(100)),
+          color: const Color.fromRGBO(223, 174, 29, 1),
+          borderRadius: BorderRadius.circular(50)),
       child: const Text(
         'Barang Bekas',
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 9),
+        style: TextStyle(color: Colors.white, fontSize: 12),
       ),
     );
+
 Widget get stock => Container(
       padding: const EdgeInsets.only(left: 9, right: 9, bottom: 4, top: 4),
       margin: const EdgeInsets.only(),
       decoration: BoxDecoration(
-          color: Colors.blue, borderRadius: BorderRadius.circular(100)),
+          color: const Color.fromRGBO(100, 161, 244, 1),
+          borderRadius: BorderRadius.circular(100)),
       child: const Text(
         'Stok 100',
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 9),
+        style: TextStyle(color: Colors.white, fontSize: 12),
       ),
     );
+
 Widget get bottomNav => Container(
       color: Colors.white,
       padding: const EdgeInsets.all(20),
@@ -201,24 +209,35 @@ Widget get bottomNav => Container(
             Icon(Icons.person, color: Colors.grey)
           ]),
     );
-Widget get rating => Container(
-    padding: const EdgeInsets.only(left: 5, top: 2, bottom: 5),
-    child: Row(
+
+Widget get terjual => Row(
       crossAxisAlignment: CrossAxisAlignment.center,
-      children:  [
+      children: const [
         Icon(
           Icons.star_rate_rounded,
           size: 25,
           color: Color.fromRGBO(60, 125, 217, 1),
         ),
         Text(
-          '5.0 | 200 Terjual',
-          style: TextStyle(height: 2,color:Color.fromRGBO(60, 125, 217, 1), fontSize: 14),
+          '5.0 |',
+          style: TextStyle(
+              height: 2,
+              color: Color.fromRGBO(60, 125, 217, 1),
+              fontSize: 14,
+              fontWeight: FontWeight.w600),
+        ),
+        Text(
+          ' 200 Terjual',
+          style: TextStyle(
+              height: 2,
+              color: Color.fromRGBO(60, 125, 217, 1),
+              fontSize: 14),
         ),
       ],
-    ));
+    );
+
 Widget comment(int i) => Container(
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(13),
       child: Column(
         children: [
           ListTile(
@@ -259,17 +278,15 @@ Widget comment(int i) => Container(
                   style: const TextStyle(
                       fontSize: 13, fontWeight: FontWeight.bold),
                 ),
-              const Text(
+                const Text(
                   '14 min',
-                  style: TextStyle(
-                    fontSize: 11,color: Colors.grey
-                  ),
+                  style: TextStyle(fontSize: 11, color: Colors.grey),
                 ),
               ],
             ),
           ),
           const Text(
-            'Thats a fantastic new app feature. You and your team did an excellent job of incorporating user testing feedback.',
+            'Thats a fantastic new app feature. You and your team did an excellent job of incorpoterjual user testing feedback.',
             textAlign: TextAlign.justify,
             style: TextStyle(fontSize: 10),
           )

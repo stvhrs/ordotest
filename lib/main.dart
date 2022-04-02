@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
             accentColor: const Color.fromRGBO(71, 98, 63, 1),
           ),
           scaffoldBackgroundColor: const Color.fromRGBO(252, 248, 248, 1),
+          
           inputDecorationTheme: const InputDecorationTheme(
             contentPadding: EdgeInsets.only(bottom: 3.5),
             prefixIconColor: Color.fromRGBO(71, 98, 63, 1),
@@ -43,8 +44,14 @@ class MyApp extends StatelessWidget {
           ),
           pageTransitionsTheme: page,
           fontFamily: 'Poppins',
-          iconTheme: const IconThemeData(size: 24,color: Colors.white),
-          textTheme:   const TextTheme(
+          iconTheme: const IconThemeData(size: 24, color: Colors.white),
+          textTheme: const TextTheme(
+              headline4: TextStyle(
+                height: 3,
+                color: Color.fromRGBO(71, 98, 63, 1),
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+              ),
               headline1: TextStyle(
                 decoration: TextDecoration.lineThrough,
                 color: Color.fromRGBO(60, 125, 217, 1),
@@ -55,9 +62,9 @@ class MyApp extends StatelessWidget {
                   color: Color.fromRGBO(60, 125, 217, 1),
                   fontWeight: FontWeight.bold),
               headline3: TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey,
-                  ))),
+                fontSize: 12,
+                color: Colors.grey,
+              ))),
       home: const Flow1Screen(),
     );
   }

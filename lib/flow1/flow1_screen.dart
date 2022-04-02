@@ -22,7 +22,7 @@ class _Flow1ScreenState extends State<Flow1Screen> {
           preferredSize: Size.fromHeight(deviceHeight / 14),
           child: const AppBarFLow1()),
       body: ListView(children: const [BannerAqua(), GridViewProducts()]),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: Container(color: Colors.white,
         padding: const EdgeInsets.all(20),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           const Icon(
