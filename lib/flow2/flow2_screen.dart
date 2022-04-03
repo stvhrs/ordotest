@@ -48,7 +48,7 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
                                 'Tas Gucci',
@@ -109,16 +109,16 @@ class _Flow2ScreenState extends State<Flow2Screen> {
                                     const EdgeInsets.only(right: 15, top: 8),
                                 width: 35,
                                 child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(100),
+                                    borderRadius: BorderRadius.circular(50),
                                     child: Image.asset('assets/store.png')),
                               ),
                               Container(
-                                  margin: const EdgeInsets.only(top: 18),
+                                  margin: const EdgeInsets.only(top: 16),
                                   child: const Text(
                                     'Eiger Store',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 13),
+                                        fontSize: 14),
                                   )),
                               const Spacer(),
                               terjual
@@ -156,10 +156,10 @@ class _Flow2ScreenState extends State<Flow2Screen> {
 
 Widget get diskon => Container(
       margin: const EdgeInsets.only(top: 2),
-      padding: const EdgeInsets.only(left: 5, right: 5, bottom: 1, top: 1),
+      padding: const EdgeInsets.only(left: 8, right: 8, bottom: 1, top: 1),
       decoration: BoxDecoration(
           color: const Color.fromRGBO(60, 125, 217, 1),
-          borderRadius: BorderRadius.circular(100)),
+          borderRadius: BorderRadius.circular(50)),
       child: const Text(
         'Diskon 10%',
         textAlign: TextAlign.center,
@@ -169,8 +169,8 @@ Widget get diskon => Container(
     );
 
 Widget get bekas => Container(
-      padding: const EdgeInsets.only(left: 9, right: 9, bottom: 4, top: 4),
-      margin: const EdgeInsets.only(right: 12, bottom: 3),
+      padding: const EdgeInsets.only(left: 9, right: 9, bottom: 5, top: 2.5),
+      margin: const EdgeInsets.only(right: 12,),
       decoration: BoxDecoration(
           color: const Color.fromRGBO(223, 174, 29, 1),
           borderRadius: BorderRadius.circular(50)),
@@ -181,15 +181,17 @@ Widget get bekas => Container(
     );
 
 Widget get stock => Container(
-      padding: const EdgeInsets.only(left: 9, right: 9, bottom: 4, top: 4),
-      margin: const EdgeInsets.only(),
+      padding: const EdgeInsets.only(left: 9, right: 9,bottom: 5, top: 2.5),
+    
       decoration: BoxDecoration(
           color: const Color.fromRGBO(100, 161, 244, 1),
-          borderRadius: BorderRadius.circular(100)),
-      child: const Text(
-        'Stok 100',
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 12),
+          borderRadius: BorderRadius.circular(50)),
+      child: Center(
+        child: const Text(
+          'Stok 100',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white, fontSize: 12),
+        ),
       ),
     );
 
@@ -216,7 +218,7 @@ Widget get terjual => Row(
         Icon(
           Icons.star_rate_rounded,
           size: 25,
-          color: Color.fromRGBO(60, 125, 217, 1),
+          color:  Color.fromRGBO(100, 161, 244, 1),
         ),
         Text(
           '5.0 |',
@@ -224,20 +226,28 @@ Widget get terjual => Row(
               height: 2,
               color: Color.fromRGBO(60, 125, 217, 1),
               fontSize: 14,
-              fontWeight: FontWeight.w600),
+              fontWeight: FontWeight.w700),
         ),
         Text(
           ' 200 Terjual',
           style: TextStyle(
-              height: 2,
-              color: Color.fromRGBO(60, 125, 217, 1),
-              fontSize: 14),
+              height: 2, color: Color.fromRGBO(60, 125, 217, 1), fontSize: 14,fontWeight: FontWeight.w600),
         ),
       ],
     );
 
 Widget comment(int i) => Container(
-      margin: const EdgeInsets.all(13),
+      decoration: BoxDecoration(   boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade200,
+            spreadRadius: 1,
+            blurRadius: 5,
+            offset: const Offset(1, 1),
+          ),
+        ],
+          color: Colors.white, borderRadius: BorderRadius.circular(5)),
+      margin: const EdgeInsets.all(8),
+      padding: EdgeInsets.only(left: 8, right: 8, bottom: 10),
       child: Column(
         children: [
           ListTile(

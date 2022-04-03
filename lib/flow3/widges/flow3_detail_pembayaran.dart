@@ -12,7 +12,7 @@ class DetailPembayaran extends StatelessWidget {
         margin: const EdgeInsets.only(top: 20),
         width: double.infinity,
         padding:
-            const EdgeInsets.only(top: 10, bottom: 10, left: 14, right: 14),
+            const EdgeInsets.only(top: 7, bottom: 7, left: 14, right: 14),
         decoration: BoxDecoration(
             color: const Color.fromRGBO(60, 125, 217, 1),
             borderRadius: BorderRadius.circular(50)),
@@ -123,11 +123,11 @@ class DetailPembayaran extends StatelessWidget {
               )
             ],
           ),
-          buttom('Waktu Pengiriman'),
-          buttom('Waktu Pengiriman'),
+          buttom('Waktu Pengantaran'),
+          buttom('Alamat Pengiriman'),
           Container(
             margin: EdgeInsets.only(top: 20, ),
-            padding: EdgeInsets.only(left: 7, right: 7, top: 25, bottom: 25),
+            padding: EdgeInsets.only(left: 9, right: 9, top: 20, bottom: 20),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(15)),
             child: Center(
@@ -136,14 +136,14 @@ class DetailPembayaran extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.secondary,
-                    fontSize: 15,
+                    fontSize: 15.2,
                     fontWeight: FontWeight.w600),
               ),
             ),
           ),
           Container(
             margin: EdgeInsets.only(top: 20,left: 15,right: 15),
-            padding: EdgeInsets.only(left: 7, right: 7, top: 14, bottom: 14),
+            padding: EdgeInsets.only(left: 7, right: 7, top: 12, bottom: 12),
             decoration: BoxDecoration(
                 color: const Color.fromRGBO(60, 125, 217, 1),
                 borderRadius: BorderRadius.circular(50)),
