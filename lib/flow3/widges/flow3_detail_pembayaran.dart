@@ -126,8 +126,8 @@ class DetailPembayaran extends StatelessWidget {
           buttom('Waktu Pengantaran'),
           buttom('Alamat Pengiriman'),
           Container(
-            margin: EdgeInsets.only(top: 20, ),
-            padding: EdgeInsets.only(left: 9, right: 9, top: 20, bottom: 20),
+            margin: const EdgeInsets.only(top: 20, ),
+            padding: const EdgeInsets.only(left: 9, right: 9, top: 20, bottom: 20),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(15)),
             child: Center(
@@ -142,8 +142,8 @@ class DetailPembayaran extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20,left: 15,right: 15),
-            padding: EdgeInsets.only(left: 7, right: 7, top: 12, bottom: 12),
+            margin: const EdgeInsets.only(top: 20,left: 15,right: 15),
+            padding: const EdgeInsets.only(left: 7, right: 7, top: 12, bottom: 12),
             decoration: BoxDecoration(
                 color: const Color.fromRGBO(60, 125, 217, 1),
                 borderRadius: BorderRadius.circular(50)),

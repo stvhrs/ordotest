@@ -101,11 +101,8 @@ Widget count(int i) => Container(
           color: i.isEven
               ? const Color.fromRGBO(60, 125, 217, 1)
               : const Color.fromRGBO(100, 161, 244, 1),
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15))),
+          borderRadius:BorderRadius.circular(
+              15)),
       child: Text(
         i.isEven ? '-  2  +' : '-  1  +',
         style: const TextStyle(color: Colors.white, fontSize: 11),
@@ -165,13 +162,10 @@ Widget cardCatatan(int i) => Container(
               )),
         )
       ]),
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         color: Color.fromRGBO(255, 255, 255, 1),
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15),
-            topRight: Radius.circular(15),
-            bottomLeft: Radius.circular(15),
-            bottomRight: Radius.circular(15)),
+        borderRadius: BorderRadius.circular(
+         15),
       ),
       height: deviceHeight /8.5,
     );
@@ -206,13 +200,10 @@ Widget cardCatatan(int i) => Container(
               )),
         )
       ]),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Color.fromRGBO(255, 255, 255, 1),
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15),
-            topRight: Radius.circular(15),
-            bottomLeft: Radius.circular(15),
-            bottomRight: Radius.circular(15)),
+        borderRadius: BorderRadius.circular(
+            15),
       ),
       height: deviceHeight / 6.2,
     );

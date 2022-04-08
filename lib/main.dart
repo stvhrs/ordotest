@@ -9,8 +9,8 @@ const page = PageTransitionsTheme(builders: {
   TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
   TargetPlatform.linux: CupertinoPageTransitionsBuilder(),
 });
-late double deviceHeight;
-late double deviceWidth;
+late final double deviceHeight;
+late final double deviceWidth;
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
             accentColor: const Color.fromRGBO(71, 98, 63, 1),
           ),
           scaffoldBackgroundColor: const Color.fromRGBO(252, 248, 248, 1),
-          
           inputDecorationTheme: const InputDecorationTheme(
             contentPadding: EdgeInsets.only(bottom: 3.5),
             prefixIconColor: Color.fromRGBO(71, 98, 63, 1),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ordotest/dummy_data.dart';
+import 'package:ordotest/constants/dummy_data.dart';
 import 'package:ordotest/flow1/widgets/product_tile.dart';
 import 'package:ordotest/models/product.dart';
 

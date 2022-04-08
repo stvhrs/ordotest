@@ -186,8 +186,8 @@ Widget get stock => Container(
       decoration: BoxDecoration(
           color: const Color.fromRGBO(100, 161, 244, 1),
           borderRadius: BorderRadius.circular(50)),
-      child: Center(
-        child: const Text(
+      child: const Center(
+        child: Text(
           'Stok 100',
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white, fontSize: 12),
@@ -247,7 +247,7 @@ Widget comment(int i) => Container(
         ],
           color: Colors.white, borderRadius: BorderRadius.circular(5)),
       margin: const EdgeInsets.all(8),
-      padding: EdgeInsets.only(left: 8, right: 8, bottom: 10),
+      padding: const EdgeInsets.only(left: 8, right: 8, bottom: 10),
       child: Column(
         children: [
           ListTile(
